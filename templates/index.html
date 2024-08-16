@@ -1,0 +1,58 @@
+{% extends 'base.html'%}
+{% block content %}
+
+<style>
+  /* Center the title and add a text animation */
+  h1 {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5rem;
+    color: #333;
+    margin-top: 30px;
+    animation: fadeIn 2s ease-in-out;
+  }
+
+  /* Animation for fading in elements */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Flexbox container to center the video */
+  .video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    padding: 20px;
+  }
+
+  /* Add some box-shadow and a subtle hover effect on the image */
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  }
+
+</style>
+
+<h1>FACE DETECTION WEB APPS IN FLASK</h1>
+
+<div class="video-container">
+  <img src="{{ url_for('video') }}" alt="Face Detection Video">
+</div>
+
+{% endblock %}
